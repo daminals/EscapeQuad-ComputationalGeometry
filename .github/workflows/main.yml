@@ -1,10 +1,10 @@
-name: Dynamic Memory Allocation Tests
+name: EscapeQuad Tests
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   Build_and_Test:
