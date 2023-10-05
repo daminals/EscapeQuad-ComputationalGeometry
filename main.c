@@ -75,11 +75,6 @@ bool EscapeQuad(tPointi a, tPointi b, tPointi c, tPointi d, tPointi e, tPointi f
     return Xor(eInside, fInside) && collinear;
 }
 
-
-int main() {
-    return 0;
-}
-
 #include <criterion/criterion.h>
 #define TEST_TIMEOUT 15
 
