@@ -85,7 +85,7 @@ Test(escape_quad_suite, test1, .timeout = TEST_TIMEOUT) {
   tPointi d = {2,0};
   tPointi e = {1,1};
   tPointi f = {3,3};
-  cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is false");
+  cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is false when it should be true!");
 }
 
 
@@ -96,7 +96,7 @@ Test(escape_quad_suite, test2, .timeout = TEST_TIMEOUT) {
     tPointi d = {4,2};
     tPointi e = {2,3};
     tPointi f = {0,1};
-  cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is false");
+  cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is false when it should be true!");
 }
 
 Test(escape_quad_suite, test3, .timeout = TEST_TIMEOUT) {
@@ -106,5 +106,5 @@ Test(escape_quad_suite, test3, .timeout = TEST_TIMEOUT) {
     tPointi d = {4,2};
     tPointi e = {2,3};
     tPointi f = {2,7};
-  cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is false");
+  cr_assert_eq(false, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is true when it should be false!");
 }
