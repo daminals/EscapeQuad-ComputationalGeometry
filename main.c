@@ -104,7 +104,7 @@ Test(escape_quad_suite, test2, .timeout = TEST_TIMEOUT) {
   cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is false");
 }
 
-Test(escape_quad_suite, test2, .timeout = TEST_TIMEOUT) {
+Test(escape_quad_suite, test3, .timeout = TEST_TIMEOUT) {
     tPointi a = {4,6};
     tPointi b = {1,6};
     tPointi c = {1,2};
