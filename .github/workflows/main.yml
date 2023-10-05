@@ -24,4 +24,4 @@ jobs:
       run: cc main.c -lcriterion
   
     - name: Run Test Cases
-      run: ./a.out
+      run: ./a.out -S --verbose=0 --timeout 30
