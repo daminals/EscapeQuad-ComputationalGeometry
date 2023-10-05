@@ -24,4 +24,4 @@ jobs:
       run: gcc main.c
   
     - name: Run Test Cases
-      run: ./main
+      run: ./a.out
