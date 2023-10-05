@@ -77,27 +77,39 @@ bool EscapeQuad(tPointi a, tPointi b, tPointi c, tPointi d, tPointi e, tPointi f
 
 
 int main() {
-    tPointi a = {0,0};
-    tPointi b = {0,2};
-    tPointi c = {2,2};
-    tPointi d = {2,0};
-    tPointi e = {1,1};
-    tPointi f = {3,3};
-    
-    // test case 1: 
-    printf("%d", EscapeQuad(a,b,c,d,e,f)); // expect true
-    
-    tPointi a1 = {4,6};
-    tPointi b1 = {1,6};
-    tPointi c1 = {1,2};
-    tPointi d1 = {4,2};
-    tPointi e1 = {2,3};
-    tPointi f1 = {0,1};
-    
-    printf("%d", EscapeQuad(a1,b1,c1,d1,e1,f1)); // expect true
-    
-    tPointi f2 = {2,7};
-    printf("%d", EscapeQuad(a1,b1,c1,d1,e1,f2)); // expect false
-
     return 0;
+}
+
+#include <criterion/criterion.h>
+#define TEST_TIMEOUT 15
+
+Test(escape_quad_suite, test1, .timeout = TEST_TIMEOUT) {
+  tPointi a = {0,0};
+  tPointi b = {0,2};
+  tPointi c = {2,2};
+  tPointi d = {2,0};
+  tPointi e = {1,1};
+  tPointi f = {3,3};
+  cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is false");
+}
+
+
+Test(escape_quad_suite, test2, .timeout = TEST_TIMEOUT) {
+    tPointi a = {4,6};
+    tPointi b = {1,6};
+    tPointi c = {1,2};
+    tPointi d = {4,2};
+    tPointi e = {2,3};
+    tPointi f = {0,1};
+  cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is false");
+}
+
+Test(escape_quad_suite, test2, .timeout = TEST_TIMEOUT) {
+    tPointi a = {4,6};
+    tPointi b = {1,6};
+    tPointi c = {1,2};
+    tPointi d = {4,2};
+    tPointi e = {2,3};
+    tPointi f = {2,7};
+  cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is false");
 }
