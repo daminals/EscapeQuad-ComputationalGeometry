@@ -60,7 +60,12 @@ bool Intersect(tPointi a, tPointi b, tPointi c, tPointi d) {// reference O'Rourk
         return false;
 }
 
-
+/*
+The reasoning behind this function is:
+	1. Between will check if any of the points on the quadrilateral are in between f and e. if they are not, it cannot be a satisfactory case and will fail.
+	2. eInside tests whether e is inside or outside the quadrilateral. Whether the polygon is clockwise or counterclockwise doesn’t actually matter, because the point is to compare it to fInside. As long as they are not the same, it shouldn't make a difference which one is actually inside or outside. Use special helper function Xor4 to ensure that the left tests are all equal within einside and finside.
+	3. Xor returns true if eInside != fInside, and by anding it with collinear will only return true for the specificized values
+*/
 bool EscapeQuad(tPointi a, tPointi b, tPointi c, tPointi d, tPointi e, tPointi f) {
     
     // if e,f are collinear with any vertex, they can only cross it thru that vertex
