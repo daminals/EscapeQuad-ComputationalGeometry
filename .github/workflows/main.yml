@@ -21,7 +21,7 @@ jobs:
       run: sudo apt-get install libcriterion-dev
 
     - name: make
-      run: gcc main.c
+      run: cc main.c -lcriterion
   
     - name: Run Test Cases
       run: ./a.out
