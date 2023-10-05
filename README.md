@@ -1,2 +1,4 @@
 # EscapeQuad-ComputationalGeometry
 EscapeQuad function in C utilizing computational geometry and O'Rourke's textbook
+
+Assignment: Write an intersection predicate,EscapeQuad, in C that takes six points, a, b, c, d, e, f, which define a convex quadrilateral, abcd, and a line segment ef, and decides if the segment ef “escapes through a corner of abcd”, meaning that one endpoint of ef lies strictly interior to abcd, while the other endpoint lies strictly exterior to abcd, but the segment ef does not (properly) cross any edge of abcd, but rather escapes by passing through a vertex of the quadrilateral. You are allowed to assume that a, b, c, and d are distinct points, no 3 of them collinear, and they are in convex position, with the points abcd forming the vertices, in order (either clockwise or counterclockwise – you do not know which), around the boundary of their convex hull.
