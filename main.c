@@ -51,6 +51,16 @@ bool Between(tPointi a, tPointi b, tPointi c) {// reference O'Rourke Textbook
         return ((a[Y] <= c[Y]) && (c[Y] <= b[Y])) || ((a[Y] >= c[Y]) && (c[Y] >= b[Y]));
 }
 
+bool BetweenNeq(tPointi a, tPointi b, tPointi c) {// reference O'Rourke Textbook
+    tPointi ba, ca;
+    if (!Collinear(a, b, c))
+        return false;
+    if (a[X] != b[X])
+        return ((a[X] < c[X]) && (c[X] < b[X])) || ((a[X] > c[X]) && (c[X] > b[X]));
+    else
+        return ((a[Y] < c[Y]) && (c[Y] < b[Y])) || ((a[Y] > c[Y]) && (c[Y] > b[Y]));
+}
+
 bool Intersect(tPointi a, tPointi b, tPointi c, tPointi d) {// reference O'Rourke Textbook
     if (IntersectProp(a, b, c, d))
         return true;
@@ -69,7 +79,7 @@ The reasoning behind this function is:
 bool EscapeQuad(tPointi a, tPointi b, tPointi c, tPointi d, tPointi e, tPointi f) {
     
     // if e,f are collinear with any vertex, they can only cross it thru that vertex
-    bool collinear = (Between(e,f,a) || Between(e,f,b) || Between(e,f,c) || Between(e,f,d));
+    bool collinear = (BetweenNeq(e,f,a) || BetweenNeq(e,f,b) || BetweenNeq(e,f,c) || BetweenNeq(e,f,d));
     
     // point in polygon test
     // do a left test on each line 
@@ -259,6 +269,7 @@ Test(escape_quad_suite, cw_reflex_test_3, .timeout = TEST_TIMEOUT) {
   cr_assert_eq(false, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is true when it should be false!");
 }
 
+// counter-clockwise: 
 Test(escape_quad_suite, ccw_reflex_test_4, .timeout = TEST_TIMEOUT) {
     tPointi a = {0,8};
     tPointi b = {0,0};
