@@ -123,3 +123,35 @@ Test(escape_quad_suite, test4, .timeout = TEST_TIMEOUT) {
     tPointi f = {2,7};
   cr_assert_eq(false, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is true when it should be false!");
 }
+
+Test(escape_quad_suite, reflex_test_1, .timeout = TEST_TIMEOUT) {
+    tPointi a = {0,6};
+    tPointi b = {0,0};
+    tPointi c = {6,0};
+    tPointi d = {2,2};
+    tPointi e = {1,1};
+    tPointi f = {3,3};
+  cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is false when it should be true!");
+}
+
+Test(escape_quad_suite, reflex_test_2, .timeout = TEST_TIMEOUT) {
+    tPointi a = {0,6};
+    tPointi b = {0,0};
+    tPointi c = {6,0};
+    tPointi d = {2,2};
+    tPointi e = {3,3};
+    tPointi f = {1,1};
+  cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is false when it should be true!");
+}
+
+
+Test(escape_quad_suite, reflex_test_3, .timeout = TEST_TIMEOUT) {
+    tPointi a = {0,6};
+    tPointi b = {0,0};
+    tPointi c = {6,0};
+    tPointi d = {2,2};
+    tPointi e = {3,3};
+    tPointi f = {4,4};
+  cr_assert_eq(true, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is true when it should be false!");
+}
+
