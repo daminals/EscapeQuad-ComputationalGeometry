@@ -182,12 +182,12 @@ Test(escape_quad_suite, ccw_convex_test5, .timeout = TEST_TIMEOUT) {
   cr_assert_eq(false, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is true when it should be false!");
 }
 
-// counter-clockwise: e is outside, f is outside, and they are collinear with vertex d
-Test(escape_quad_suite, ccw_convex_test5, .timeout = TEST_TIMEOUT) {
-    tPointi d = {4,6};
-    tPointi c = {1,6};
-    tPointi b = {1,2};
-    tPointi a = {4,2};
+// clockwise: e is outside, f is outside, and they are collinear with vertex d
+Test(escape_quad_suite, cw_convex_test5, .timeout = TEST_TIMEOUT) {
+    tPointi a = {4,6};
+    tPointi b = {1,6};
+    tPointi c = {1,2};
+    tPointi d = {4,2};
     tPointi e = {5,5};
     tPointi f = {3,7};
   cr_assert_eq(false, EscapeQuad(a,b,c,d,e,f), "EscapeQuad is true when it should be false!");
